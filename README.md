@@ -1,45 +1,131 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# A love for food
 
-Welcome Slendz,
+version @1.0.0
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## Installation
 
-## Gitpod Reminders
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+```bash
+	pip3 install -r requirements.txt
+	python manage.py collectstatic
+	python manage.py migrate
+	python manage.py createsuperuser
+	python manage.py runserver
+```
 
-`python3 -m http.server`
+## Database Settings
 
-A blue button should appear to click: *Make Public*,
+This app used SQLite for the database, so database settings are not required.
 
-Another blue button should appear to click: *Open Browser*.
+## Static Files
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Static files are in /static/ directory.
 
-A blue button should appear to click: *Make Public*,
+## Templates Files
 
-Another blue button should appear to click: *Open Browser*.
+Templates files are in /template/ directory.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Python Files
 
-## Updates Since The Instructional Video
+Python files are in /front/ directory.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Uploaded images
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Uploaded images are stored in /media/images/ directory.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Structure of Project
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+```bash
+< PROJECT ROOT >
+	│   .gitattributes
+	│   .gitignore
+	│   db.sqlite3             # sqlite file
+	│   manage.py
+	│   Procfile
+	│   Procfile.windows
+	│   README.md
+	│   requirements.txt        # python libraries for this app.
+	│
+	├───front
+	│   │   admin.py
+	│   │   apps.py
+	│   │   models.py            # define Recipe table
+	│   │   tests.py
+	│   │   urls.py              # define URLs and combine URLs and view files
+	│   │   __init__.py
+	│   │
+	│   ├───migrations
+	│   │
+	│   ├───views
+	│   │   │   add_recipe.py     # add recipe function
+	│   │   │   custome.py        # delete and edit recipe function
+	│   │   │   detail.py         # show details of one recipe
+	│   │   │   index.py          # show all recipes
+	│   │   │   my_recipe.py      # show all recipes that the user added.
+	│   │   │   search.py
+	│   │   │
+	│   │   ├───auth
+	│   │   │   │   login.py      # user login
+	│   │   │   │   signup.py     # user sign up
+	│   │   │   │
+	│   │   │   └───__pycache__
+	│   │   │
+	│   │   └───__pycache__
+	│   │
+	│   └───__pycache__
+	│
+	├───media
+	│   └───images
+	│
+	├───recipes
+	│   │   asgi.py
+	│   │   settings.py                    # main setting file of this app.
+	│   │   urls.py
+	│   │   wsgi.py
+	│   │   __init__.py
+	│   │
+	│   └───__pycache__
+	│
+	├───static
+	│   └───assets
+	│       ├───css
+	│       │       app.css                  # the main styles in this file.
+	│       │       bootstrap.min.css
+	│       │       bootstrap.min.css.map
+	│       │       icons.css
+	│       │       pace.min.css
+	│       │
+	│       ├───flags
+	│       │
+	│       ├───fonts
+	│       │
+	│       ├───images
+	│       │
+	│       ├───js
+	│       │       add_recipe.js                # add and edit function
+	│       │       app.js                       # scrolling and delete function
+	│       │       auth.js                      # sign up and sign in function
+	│       │       bootstrap.bundle.min.js
+	│       │       bootstrap.bundle.min.js.map
+	│       │       jquery.min.js
+	│       │       pace.min.js
+	│       │       tata.js
+	│       │       tinymce.min.js
+	│       │
+	│       └───plugins
+	│           ├───Drag-And-Drop                # plugin to drag and drop file
+	│           │
+	│           └───input-tags                   # plugin to input multiple words
+	│
+	└───templates
+	        add-new.html  # template file to add and edit recipes.
+	        detail.html   # template file to show details of recipes.
+	        index.html    # template file to show cards of recipes.
+	        layout.html   # main layout file to extend.
+	        signin.html   # sign-in page template file.
+	        signup.html   # sign-up page template file.
+```
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+## Demo
+[DEMO](http://143.198.187.223/)
